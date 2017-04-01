@@ -43,4 +43,76 @@ class Futusign_Overlay_Common {
 	public function get_overlay() {
 		return $this->overlay;
 	}
+	/**
+	 * Define advanced custom fields for screen for overlay.
+	 *
+	 * @since    0.1.0
+	 */
+	// TODO: DEPRECATED REPLACE WITH ACF_ADD_LOCAL_FIELD_GROUP
+	public function register_field_group_screen() {
+		if( function_exists( 'register_field_group' ) ) {
+			register_field_group(array (
+				'id' => 'acf_futusign_overlay_screen', // TODO: DEPRECATED
+				'key' => 'acf_futusign_overlay_screen',
+				'title' => __('Overlay Feature', 'futusign_overlay'),
+				'fields' => array (
+					array (
+						'key' => 'field_acf_fs_ov_sc_overlay',
+						'label' => __('Overlay', 'futusign_overlay'),
+						'name' => 'overlay',
+						'type' => 'post_object',
+						'instructions' => __('Optional screen overlay.', 'futusign_overlay'),
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array (
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'post_type' => array (
+							0 => 'futusign_overlay',
+						),
+						'taxonomy' => array (
+						),
+						'allow_null' => 1,
+						'multiple' => 0,
+						'return_format' => 'id',
+						'ui' => 1,
+					),
+				),
+				'location' => array (
+					array (
+						array (
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => 'futusign_screen',
+						),
+					),
+				),
+				'menu_order' => 1,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => array (
+					0 => 'permalink',
+					1 => 'the_content',
+					2 => 'excerpt',
+					3 => 'discussion',
+					4 => 'comments',
+					5 => 'revisions',
+					6 => 'slug',
+					7 => 'author',
+					8 => 'format',
+					9 => 'page_attributes',
+					10 => 'featured_image',
+					11 => 'categories',
+					12 => 'tags',
+					13 => 'send-trackbacks',
+				),
+				'active' => 1,
+				'description' => '',
+			));
+		}
+	}
 }
