@@ -1,0 +1,21 @@
+{
+    "name" : "futusign Overlay",
+    "slug" : "futusignz-overlay",
+    "download_url" : "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/futusignz-overlay-0-1-1.zip",
+    "version" : "0.1.0",
+    "author" : "John Tucker",
+    "sections" : {
+        "description" : "Add futusign Overlays feature",
+        "installation": "<ul><li>Copy the <code>futusignz-overlay</code> into your<code>wp-content/plugins</code> folder</li><li>Activate the <code>futusignz-overlay</code> plugin via the plugin admin page</li></ul>",
+        "changelog" : "<p><b>0.1.0</b></p><p>Initial release</p>"
+    },
+    "homepage": "https://www.futusign.com",
+    "requires": "4.3",
+    "tested": "4.7",
+    "author_homepage": "https://github.com/larkintuckerllc",
+    "last_updated": "2017-03-10 00:00:00",
+    "upgrade_notice": "Initial release",
+    "banners": {
+      "low": "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/banner-772x250.jpg"
+    }
+}
