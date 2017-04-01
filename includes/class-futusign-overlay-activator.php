@@ -24,6 +24,13 @@ class Futusign_Overlay_Activator {
 	 * @since    0.1.0
 	 */
 	public static function activate() {
-		flush_rewrite_rules();
+		wp_insert_post(
+			array(
+				'post_type' => 'futusign_ov_widget',
+				'post_status' => 'publish',
+				'post_title' => 'Clock',
+				'post_content' => 'URL',
+			)
+		);
 	}
 }
