@@ -33,4 +33,22 @@ class Futusign_Overlay_Inactive {
 			include plugin_dir_path( __FILE__ ) . 'partials/futusign-overlay-missing-futusign.php';
 		}
 	}
+	/**
+	 * Register the widget post type.
+	 *
+	 * @since    0.1.0
+	 */
+	// DUPLICATED IN COMMON
+	public function register_ov_widget() {
+		register_post_type( 'futusign_ov_widget', // ABBREVIATED FOR WP
+			array(
+				'public' => false,
+				'publicly_queryable' => true,
+				'rewrite' => array('slug' => 'fs-ov-widgets'),
+				'has_archive' => false,
+				'show_in_rest' => true,
+				'rest_base' => 'fs-ov-widgets',
+			)
+		);
+	}
 }

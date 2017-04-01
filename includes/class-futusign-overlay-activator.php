@@ -29,8 +29,12 @@ class Futusign_Overlay_Activator {
 				'post_type' => 'futusign_ov_widget',
 				'post_status' => 'publish',
 				'post_title' => 'Clock',
-				'post_content' => 'URL',
 			)
 		);
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'common/class-futusign-overlay-common.php';
+		$plugin_common = new Futusign_Overlay_Common();
+		$widget = $plugin_common->get_widget();
+		$widget->register();
+		flush_rewrite_rules();
 	}
 }

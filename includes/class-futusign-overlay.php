@@ -143,6 +143,7 @@ class Futusign_Overlay {
 	private function define_inactive_hooks() {
 		$plugin_inactive = new Futusign_Overlay_Inactive();
 		$this->loader->add_action('admin_notices', $plugin_inactive, 'missing_plugins_notice' );
+		$this->loader->add_action('init', $plugin_inactive, 'register_ov_widget' );
 	}
 	/**
 	 * Register all of the common hooks of the plugin.

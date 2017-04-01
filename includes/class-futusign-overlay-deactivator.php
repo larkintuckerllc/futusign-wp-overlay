@@ -42,5 +42,6 @@ class Futusign_Overlay_Deactivator {
 		foreach ($clockIds as $clockId) {
 			wp_delete_post($clockId, true);
 		}
+		flush_rewrite_rules();
 	}
 }

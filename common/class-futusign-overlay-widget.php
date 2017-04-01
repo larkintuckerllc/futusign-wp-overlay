@@ -29,26 +29,16 @@ class Futusign_Overlay_Widget {
 	 *
 	 * @since    0.1.0
 	 */
+	// DUPLICATED IN INACTIVE
 	public function register() {
-		$labels = array(
-			'name' => __( 'Widgets', 'futusign_overlay' ),
-			'singular_name' => __( 'Widget', 'futusign_overlay' ),
-			'add_new' => __( 'Add New' , 'futusign_overlay' ),
-			'add_new_item' => __( 'Add New Widget' , 'futusign_overlay' ),
-			'edit_item' =>  __( 'Edit Widget' , 'futusign_overlay' ),
-			'new_item' => __( 'New Widget' , 'futusign_overlay' ),
-			'view_item' => __('View Widget', 'futusign_overlay'),
-			'search_items' => __('Search Widgets', 'futusign_overlay'),
-			'not_found' =>  __('No Widgets found', 'futusign_overlay'),
-			'not_found_in_trash' => __('No Widgets found in Trash', 'futusign_overlay'),
-		);
 		register_post_type( 'futusign_ov_widget', // ABBREVIATED FOR WP
 			array(
-				'labels' => $labels,
 				'public' => false,
+				'publicly_queryable' => true,
+				'rewrite' => array('slug' => 'fs-ov-widgets'),
 				'has_archive' => false,
 				'show_in_rest' => true,
-				'rest_base' => 'fs-widgets',
+				'rest_base' => 'fs-ov-widgets',
 			)
 		);
 	}
