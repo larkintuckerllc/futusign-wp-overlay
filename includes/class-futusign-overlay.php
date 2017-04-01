@@ -152,6 +152,10 @@ class Futusign_Overlay {
 	 */
 	private function define_common_hooks() {
 		$plugin_common = new Futusign_Overlay_Common();
+		// OVERLAY
+		$overlay = $plugin_common->get_overlay();
+		$this->loader->add_action('init', $overlay, 'register');
+		$this->loader->add_filter('init', $overlay, 'register_field_group');
 	}
 	/**
 	 * Register all of the hooks related to the admin area functionality

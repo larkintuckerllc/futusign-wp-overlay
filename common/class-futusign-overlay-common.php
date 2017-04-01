@@ -23,6 +23,7 @@ class Futusign_Overlay_Common {
 	 */
 	public function __construct() {
 		$this->load_dependencies();
+		$this->overlay = new Futusign_Overlay_Type();
 	}
 	/**
 	 * Load the required dependencies for module.
@@ -31,5 +32,15 @@ class Futusign_Overlay_Common {
 	 * @access   private
 	 */
 	private function load_dependencies() {
+		require_once plugin_dir_path( __FILE__ ) . 'class-futusign-overlay-type.php';
+	}
+	/**
+	 * Retrieve the overlay.
+	 *
+	 * @since     0.1.0
+	 * @return    Futusign_Overlay_Type    The overlay functionality.
+	 */
+	public function get_overlay() {
+		return $this->overlay;
 	}
 }
