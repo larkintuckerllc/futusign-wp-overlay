@@ -23,4 +23,18 @@ class Futusign_Overlay_Public {
 	 */
 	public function __construct() {
 	}
+	/**
+	 * Return single templates
+	 *
+	 * @since    0.3.0
+	 * @param    string      $single     path to template
+	 * @return   string      path to template
+	 */
+	public function single_template( $single ) {
+		global $post;
+		if ($post->post_type == 'futusign_ov_widget' && $post->post_title == 'Clock'){
+			return plugin_dir_path( __FILE__ ) . 'clock/index.php';
+		}
+		return $single;
+	}
 }

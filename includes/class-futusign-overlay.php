@@ -181,6 +181,7 @@ class Futusign_Overlay {
 	 */
 	private function define_public_hooks() {
 		$plugin_public = new Futusign_Overlay_Public();
+		$this->loader->add_action('single_template', $plugin_public, 'single_template');
 	}
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
