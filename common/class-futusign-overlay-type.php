@@ -1,6 +1,6 @@
 <?php
 /**
- * Define the youtube video functionality
+ * Define the overlay functionality
  *
  * @link       https://bitbucket.org/futusign/futusign-wp-overlay
  * @since      0.1.0
@@ -70,11 +70,34 @@ class Futusign_Overlay_Type {
 				'title' => 'futusign Overlays',
 				'fields' => array (
 					array (
-						'key' => 'field_acf_futusign_overlays_instructions',
+						'key' => 'field_acf_fs_ov_instructions',
 						'label' => __('Instructions', 'futusign_overlay'),
 						'name' => '',
 						'type' => 'message',
-						'message' => wp_kses(__( 'TODO Instructions.', 'futusign_overlay' ), array( 'i' => array() ) ),
+						'message' => wp_kses(__( 'Select one or more widgets to display. Use the <i>Settings</i> admin menu to configure widgets. Use the <i>Screens</i> admin menu to assign to screen.', 'futusign_overlay' ), array( 'i' => array() ) ),
+					),
+					array (
+						'key' => 'field_acf_fs_ov_upper_left',
+						'label' => __('Upper-Left', 'futusign_overlay'),
+						'name' => 'upper_left',
+						'type' => 'post_object',
+						'instructions' => __('Widget in upper-left corner.', 'futusign_overlay'),
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array (
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'post_type' => array (
+							0 => 'futusign_ov_widget',
+						),
+						'taxonomy' => array (
+						),
+						'allow_null' => 1,
+						'multiple' => 0,
+						'return_format' => 'id',
+						'ui' => 1,
 					),
 				),
 				'location' => array (

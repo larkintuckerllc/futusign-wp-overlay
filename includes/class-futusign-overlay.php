@@ -157,6 +157,9 @@ class Futusign_Overlay {
 		$this->loader->add_action('init', $overlay, 'register');
 		$this->loader->add_filter('init', $overlay, 'register_field_group');
 		$this->loader->add_filter('init', $plugin_common, 'register_field_group_screen');
+		// WIDGET
+		$widget = $plugin_common->get_widget();
+		$this->loader->add_action('init', $widget, 'register');
 	}
 	/**
 	 * Register all of the hooks related to the admin area functionality

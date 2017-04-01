@@ -24,6 +24,7 @@ class Futusign_Overlay_Common {
 	public function __construct() {
 		$this->load_dependencies();
 		$this->overlay = new Futusign_Overlay_Type();
+		$this->widget = new Futusign_Overlay_Widget();
 	}
 	/**
 	 * Load the required dependencies for module.
@@ -33,6 +34,7 @@ class Futusign_Overlay_Common {
 	 */
 	private function load_dependencies() {
 		require_once plugin_dir_path( __FILE__ ) . 'class-futusign-overlay-type.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-futusign-overlay-widget.php';
 	}
 	/**
 	 * Retrieve the overlay.
@@ -42,6 +44,15 @@ class Futusign_Overlay_Common {
 	 */
 	public function get_overlay() {
 		return $this->overlay;
+	}
+	/**
+	 * Retrieve the widget.
+	 *
+	 * @since     0.1.0
+	 * @return    Futusign_Overlay_Widget    The widget functionality.
+	 */
+	public function get_widget() {
+		return $this->widget;
 	}
 	/**
 	 * Define advanced custom fields for screen for overlay.
@@ -54,7 +65,7 @@ class Futusign_Overlay_Common {
 			register_field_group(array (
 				'id' => 'acf_futusign_overlay_screen', // TODO: DEPRECATED
 				'key' => 'acf_futusign_overlay_screen',
-				'title' => __('Overlay Feature', 'futusign_overlay'),
+				'title' => 'Overlay',
 				'fields' => array (
 					array (
 						'key' => 'field_acf_fs_ov_sc_overlay',
@@ -91,7 +102,7 @@ class Futusign_Overlay_Common {
 				),
 				'menu_order' => 1,
 				'position' => 'normal',
-				'style' => 'default',
+				'style' => 'seamless',
 				'label_placement' => 'top',
 				'instruction_placement' => 'label',
 				'hide_on_screen' => array (
