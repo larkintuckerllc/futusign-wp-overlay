@@ -51,4 +51,13 @@ class Futusign_Overlay_Inactive {
 			)
 		);
 	}
+	// DUPLICATED IN COMMON
+	/**
+	 * Add rewrite rules
+	 *
+	 * @since    0.1.0
+	 */
+	public function add_rewrite_rules() {
+		add_rewrite_rule( '^fs-ov-time/?', 'index.php?fs_ov_time=1', 'top' );
+	}
 }

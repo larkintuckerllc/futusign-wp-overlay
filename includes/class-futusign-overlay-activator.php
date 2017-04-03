@@ -35,6 +35,7 @@ class Futusign_Overlay_Activator {
 		$plugin_common = new Futusign_Overlay_Common();
 		$widget = $plugin_common->get_widget();
 		$widget->register();
+		$plugin_common->add_rewrite_rules();
 		flush_rewrite_rules();
 	}
 }

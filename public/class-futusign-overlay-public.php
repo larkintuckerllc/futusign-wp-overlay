@@ -26,7 +26,7 @@ class Futusign_Overlay_Public {
 	/**
 	 * Return single templates
 	 *
-	 * @since    0.3.0
+	 * @since    0.1.0
 	 * @param    string      $single     path to template
 	 * @return   string      path to template
 	 */
@@ -36,5 +36,29 @@ class Futusign_Overlay_Public {
 			return plugin_dir_path( __FILE__ ) . 'clock/index.php';
 		}
 		return $single;
+	}
+	/**
+	 * Add to query variables
+	 *
+	 * @since    0.1.0
+	 * @param    array      $query_vars     query variables
+	 * @return   array      query variables
+	 */
+	public function query_vars( $query_vars ) {
+    $query_vars[] = 'fs_ov_time';
+		return $query_vars;
+	}
+	/**
+	 * Define futusign-monitor endpoint
+	 *
+	 * @since    0.1.0
+	 * @param    array      $query     query
+	 */
+	public function parse_request( $query ) {
+		if ( array_key_exists( 'fs_ov_time', $query->query_vars ) ) {
+			include 'partials/futusign-overlay-time.php';
+			exit();
+		}
+		return;
 	}
 }
