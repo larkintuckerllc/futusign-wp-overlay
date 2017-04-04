@@ -1,3 +1,3 @@
-<div>
-  Test
-</div>
+{
+  "time": <?php echo time(); ?>
+}
