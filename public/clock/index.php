@@ -63,9 +63,11 @@
 </head>
 <body>
   <div id="clock">
-    10:10 PM
   </div>
   <script>
+    var TIME_URL = 'fs-ov-time';
+    var siteURL = '<?php echo trailingslashit( site_url() ); ?>';
+    var drift = 0;
     var parseQueryString = function() {
       var parsed = {};
       var qs = window.location.search;
@@ -84,6 +86,31 @@
       }
       return parsed;
     };
+    var get = function(endpoint, resolve, reject) {
+      var result;
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.addEventListener('load', function() {
+        var status = xmlhttp.status;
+        if (status !== 200) {
+          reject({ message: status.toString() });
+        }
+        try {
+          result = JSON.parse(xmlhttp.responseText);
+        } catch (error) {
+          reject({ message: '500' });
+          return;
+        }
+        resolve(result);
+      });
+      xmlhttp.addEventListener('error', function() {
+        reject({ message: '500' });
+      });
+      xmlhttp.addEventListener('abort', function() {
+        reject({ message: '500' });
+      });
+      xmlhttp.open('GET', endpoint, true);
+      xmlhttp.send();
+    }
     document.addEventListener("DOMContentLoaded", function() {
       var clockEl = document.getElementById('clock');
       var parsed = parseQueryString();
@@ -102,9 +129,10 @@
           clockEl.className = 'clock--upper-left';
       }
       var updateClock = function() {
-        var now = new Date();
+        var localTime = (new Date()).getTime();
+        var now = new Date(localTime - drift);
         var h = now.getHours();
-        var p = h > 12 ? 'PM' : 'PM';
+        var p = h > 12 ? 'PM' : 'AM';
         h = h > 13 ? h - 12 : h;
         var m = now.getMinutes();
         m = m < 10 ? '0' + m : m;
@@ -113,6 +141,25 @@
         setTimeout(updateClock, 1000);
       }
       updateClock();
+      var updateTime = function() {
+        var version = Date.now();
+        get(
+          siteURL + TIME_URL + '?version=' + version,
+          // RESOLVE
+          function(result) {
+            var serverTime = result.time * 1000;
+            var localTime = (new Date()).getTime();
+            drift = localTime - serverTime;
+            clockEl.style.color = 'white';
+          },
+          // REJECT
+          function() {
+            clockEl.style.color = '#d9534f';
+          }
+        );
+        setTimeout(updateTime, 1000 * 60 * 60);
+      }
+      updateTime();
     });
   </script>
 </body>
