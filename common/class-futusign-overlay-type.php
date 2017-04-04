@@ -96,7 +96,7 @@ class Futusign_Overlay_Type {
 						),
 						'allow_null' => 1,
 						'multiple' => 0,
-						'return_format' => 'id',
+						'return_format' => 'object',
 						'ui' => 1,
 					),
 					array (
@@ -119,7 +119,7 @@ class Futusign_Overlay_Type {
 						),
 						'allow_null' => 1,
 						'multiple' => 0,
-						'return_format' => 'id',
+						'return_format' => 'object',
 						'ui' => 1,
 					),
 					array (
@@ -142,7 +142,7 @@ class Futusign_Overlay_Type {
 						),
 						'allow_null' => 1,
 						'multiple' => 0,
-						'return_format' => 'id',
+						'return_format' => 'object',
 						'ui' => 1,
 					),
 					array (
@@ -165,7 +165,7 @@ class Futusign_Overlay_Type {
 						),
 						'allow_null' => 1,
 						'multiple' => 0,
-						'return_format' => 'id',
+						'return_format' => 'object',
 						'ui' => 1,
 					),
 					array (
@@ -188,7 +188,7 @@ class Futusign_Overlay_Type {
 						),
 						'allow_null' => 1,
 						'multiple' => 0,
-						'return_format' => 'id',
+						'return_format' => 'object',
 						'ui' => 1,
 					),
 					array (
@@ -211,7 +211,7 @@ class Futusign_Overlay_Type {
 						),
 						'allow_null' => 1,
 						'multiple' => 0,
-						'return_format' => 'id',
+						'return_format' => 'object',
 						'ui' => 1,
 					),
 					array (
@@ -234,7 +234,7 @@ class Futusign_Overlay_Type {
 						),
 						'allow_null' => 1,
 						'multiple' => 0,
-						'return_format' => 'id',
+						'return_format' => 'object',
 						'ui' => 1,
 					),
 					array (
@@ -257,7 +257,7 @@ class Futusign_Overlay_Type {
 						),
 						'allow_null' => 1,
 						'multiple' => 0,
-						'return_format' => 'id',
+						'return_format' => 'object',
 						'ui' => 1,
 					),
 				),

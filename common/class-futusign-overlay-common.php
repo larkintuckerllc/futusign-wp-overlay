@@ -87,7 +87,7 @@ class Futusign_Overlay_Common {
 						),
 						'allow_null' => 1,
 						'multiple' => 0,
-						'return_format' => 'id',
+						'return_format' => 'object',
 						'ui' => 1,
 					),
 				),
