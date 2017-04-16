@@ -8,6 +8,9 @@
  * @package    futusign_overlay
  * @subpackage futusign_overlay/admin
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * The admin-specific functionality of the plugin.
  *

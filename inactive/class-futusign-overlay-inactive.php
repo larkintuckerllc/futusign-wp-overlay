@@ -8,6 +8,9 @@
  * @package    futusign_overlay
  * @subpackage futusign_overlay/inactive
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * The inactive functionality of the plugin.
  *

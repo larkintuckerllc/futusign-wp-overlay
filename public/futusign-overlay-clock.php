@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -8,6 +8,9 @@
  * @package    futusign_overlay
  * @subpackage futusign_overlay/public
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * The public-specific functionality of the plugin.
  *

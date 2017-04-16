@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Fired during plugin deactivation
  *
@@ -9,6 +8,9 @@
  * @package    futusign_overlay
  * @subpackage futusign_overlay/includes
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * Fired during plugin deactiviation.
  *

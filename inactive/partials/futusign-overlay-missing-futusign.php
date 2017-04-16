@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Missing futusign plugin partial.
  *
@@ -9,7 +8,6 @@
  * @package    futusign_overlay
  * @subpackage inactive/partials
  */
-
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }

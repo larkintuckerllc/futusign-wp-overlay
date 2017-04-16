@@ -8,6 +8,9 @@
  * @package    futusign_overlay
  * @subpackage futusign_overlay/common
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * Define the overlay functionality.
 *
