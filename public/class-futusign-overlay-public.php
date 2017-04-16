@@ -33,7 +33,7 @@ class Futusign_Overlay_Public {
 	public function single_template( $single ) {
 		global $post;
 		if ($post->post_type == 'futusign_ov_widget' && $post->post_title == 'Clock'){
-			return plugin_dir_path( __FILE__ ) . 'clock/index.php';
+			return plugin_dir_path( __FILE__ ) . 'futusign-overlay-clock.php';
 		}
 		return $single;
 	}

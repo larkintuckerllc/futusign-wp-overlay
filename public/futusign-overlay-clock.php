@@ -133,7 +133,7 @@
         var now = new Date(localTime - drift);
         var h = now.getHours();
         var p = h > 12 ? 'PM' : 'AM';
-        h = h > 13 ? h - 12 : h;
+        h = h > 12 ? h - 12 : h;
         var m = now.getMinutes();
         m = m < 10 ? '0' + m : m;
         clockEl.innerHTML =

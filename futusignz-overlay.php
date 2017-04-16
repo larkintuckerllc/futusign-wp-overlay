@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -10,7 +9,7 @@
  * Plugin Name:      futusign Overlay
  * Plugin URI:       https://www.futusign.com
  * Description:      Add futusign Overlays feature
- * Version:          0.1.0
+ * Version:          0.1.1
  * Author:           John Tucker
  * Author URI:       https://github.com/larkintuckerllc
  * License:          Custom
@@ -18,7 +17,6 @@
  * Text Domain:      futusign-overlay
  * Domain Path:      /languages
  */
-
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
