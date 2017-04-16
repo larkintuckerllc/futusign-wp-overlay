@@ -2,19 +2,19 @@
     "name" : "futusign Overlay",
     "slug" : "futusignz-overlay",
     "download_url" : "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/futusignz-overlay-0-1-2.zip",
-    "version" : "0.1.2",
+    "version" : "0.1.3",
     "author" : "John Tucker",
     "sections" : {
         "description" : "Add futusign Overlays feature",
         "installation": "Upload and activate the <code>futusignz-image</code> plugin via the plugin admin page",
-        "changelog" : "<p><b>0.1.2</b></p><p>Security update; harden PHP</p><p><b>0.1.1</b></p><p>Rid of index files and fix 13 pm</p><p><b>0.1.0</b></p><p>Initial release</p>"
+        "changelog" : "<p><b>0.1.3</b></p><p>Test upgrade for clock</p><p><b>0.1.2</b></p><p>Security update; harden PHP</p><p><b>0.1.1</b></p><p>Rid of index files and fix 13 pm</p><p><b>0.1.0</b></p><p>Initial release</p>"
     },
     "homepage": "https://www.futusign.com",
     "requires": "4.3",
     "tested": "4.7",
     "author_homepage": "https://github.com/larkintuckerllc",
-    "last_updated": "2017-04-16 00:00:00",
-    "upgrade_notice": "Security update; harden PHP",
+    "last_updated": "2017-04-16 01:00:00",
+    "upgrade_notice": "Test upgrade for clock",
     "banners": {
       "low": "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/banner-772x250.jpg"
     }
