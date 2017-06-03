@@ -30,7 +30,7 @@ class Futusign_Overlay {
 		if ( 'futusign' == $plugin ) {
 			return class_exists( 'Futusign' );
 		} elseif ( 'all' == $plugin ) {
-			return class_exists( 'WP_REST_Controller' ) && class_exists( 'acf' ) && class_exists( 'ACF_TO_REST_API' ) && class_exists( 'Futusign' );
+			return class_exists( 'acf' ) && class_exists( 'Futusign' );
 		}
 		return false;
 	}
@@ -92,7 +92,7 @@ class Futusign_Overlay {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'futusign-overlay';
-		$this->version = '0.1.4';
+		$this->version = '0.2.0';
 		$this->load_dependencies();
 		$this->set_locale();
 		if (Futusign_Overlay::is_plugin_active('all')) {
@@ -160,8 +160,8 @@ class Futusign_Overlay {
 		// OVERLAY
 		$overlay = $plugin_common->get_overlay();
 		$this->loader->add_action('init', $overlay, 'register');
-		$this->loader->add_filter('init', $overlay, 'register_field_group');
-		$this->loader->add_filter('init', $plugin_common, 'register_field_group_screen');
+		$this->loader->add_action('init', $overlay, 'register_field_group');
+		$this->loader->add_action('init', $plugin_common, 'register_field_group_screen');
 		// WIDGET
 		$widget = $plugin_common->get_widget();
 		$this->loader->add_action('init', $widget, 'register');
