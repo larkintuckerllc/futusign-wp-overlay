@@ -146,8 +146,6 @@ class Futusign_Overlay {
 	private function define_inactive_hooks() {
 		$plugin_inactive = new Futusign_Overlay_Inactive();
 		$this->loader->add_action('admin_notices', $plugin_inactive, 'missing_plugins_notice' );
-		$this->loader->add_action('init', $plugin_inactive, 'register_ov_widget' );
-		$this->loader->add_action('init', $plugin_inactive, 'add_rewrite_rules');
 	}
 	/**
 	 * Register all of the common hooks of the plugin.
@@ -165,8 +163,6 @@ class Futusign_Overlay {
 		// WIDGET
 		$widget = $plugin_common->get_widget();
 		$this->loader->add_action('init', $widget, 'register');
-		// REWRITE
-		$this->loader->add_action('init', $plugin_common, 'add_rewrite_rules');
 	}
 	/**
 	 * Register all of the hooks related to the admin area functionality
@@ -187,9 +183,6 @@ class Futusign_Overlay {
 	 */
 	private function define_public_hooks() {
 		$plugin_public = new Futusign_Overlay_Public();
-		$this->loader->add_action('single_template', $plugin_public, 'single_template');
-		$this->loader->add_action('query_vars', $plugin_public, 'query_vars');
-		$this->loader->add_action('parse_request', $plugin_public, 'parse_request');
 	}
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
