@@ -9,7 +9,7 @@
  * Plugin Name:      futusign Overlay
  * Plugin URI:       https://www.futusign.com
  * Description:      Add futusign Overlays feature
- * Version:          0.3.0
+ * Version:          0.3.1
  * Author:           John Tucker
  * Author URI:       https://github.com/larkintuckerllc
  * License:          Custom

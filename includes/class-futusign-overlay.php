@@ -92,7 +92,7 @@ class Futusign_Overlay {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'futusign-overlay';
-		$this->version = '0.3.0';
+		$this->version = '0.3.1';
 		$this->load_dependencies();
 		$this->set_locale();
 		if (Futusign_Overlay::is_plugin_active('all')) {
