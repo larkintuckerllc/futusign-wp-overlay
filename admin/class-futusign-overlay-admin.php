@@ -26,4 +26,17 @@ class Futusign_Overlay_Admin {
 	 */
 	public function __construct() {
 	}
+	/**
+	 * Display settings page
+	 *
+	 * @since    0.4.0
+	 * @param    array      $query     query
+	 * @return   array      filtered query
+	 */
+	public function wp_link_query_args( $query ) {
+		$cpt_to_remove = 'futusign_overlay';
+		$key = array_search( $cpt_to_remove, $query['post_type'] );
+		if( $key ) unset( $query['post_type'][$key] );
+		return $query;
+	}
 }

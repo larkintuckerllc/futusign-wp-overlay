@@ -92,7 +92,7 @@ class Futusign_Overlay {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'futusign-overlay';
-		$this->version = '0.3.1';
+		$this->version = '0.4.0';
 		$this->load_dependencies();
 		$this->set_locale();
 		if (Futusign_Overlay::is_plugin_active('all')) {
@@ -173,6 +173,7 @@ class Futusign_Overlay {
 	 */
 	private function define_admin_hooks() {
 		$plugin_admin = new Futusign_Overlay_Admin();
+		$this->loader->add_filter( 'wp_link_query_args', $plugin_admin, 'wp_link_query_args' );
 	}
 	/**
 	 * Register all of the hooks related to the public-facing functionality
